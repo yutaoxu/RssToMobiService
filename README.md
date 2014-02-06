@@ -69,7 +69,7 @@ java -jar RssToMobiService-1.0-SNAPSHOT.jar
 - optimize entry fetch/parse and image download 
 
 ### Q&A
-- [my blog](http://blog.csdn.net/yanghua_kobe)
+- [my blog about this repository](http://blog.csdn.net/yanghua_kobe/article/details/18950969)
 - [my email](mailto://yanghua1127@gmail.com)
 - [my weibo](http://weibo.com/yanghua1127)
 
