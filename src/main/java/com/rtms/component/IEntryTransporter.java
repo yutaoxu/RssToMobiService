@@ -1,4 +1,4 @@
-package com.rtms.core.contract;
+package com.rtms.component;
 
 import com.rtms.core.base.BaseEntry;
 import com.rtms.core.base.BaseFeed;

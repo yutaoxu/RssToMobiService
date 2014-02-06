@@ -1,5 +1,6 @@
 package com.rtms.impl;
 
+import com.rtms.component.IEntryTransporter;
 import com.rtms.core.base.BaseEntry;
 import com.rtms.core.base.BaseFeed;
 import com.rtms.core.base.BaseImage;

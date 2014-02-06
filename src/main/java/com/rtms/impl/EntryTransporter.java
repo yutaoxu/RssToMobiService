@@ -3,7 +3,7 @@ package com.rtms.impl;
 import com.rtms.core.base.BaseEntry;
 import com.rtms.core.base.BaseFeed;
 import com.rtms.core.contract.AbstractConfigManager;
-import com.rtms.core.contract.IEntryTransporter;
+import com.rtms.component.IEntryTransporter;
 import com.rtms.util.helper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
