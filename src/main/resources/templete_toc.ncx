@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="zh-CN">
+    <head>
+        <meta name="dtb:depth" content="4" />
+        <meta name="dtb:totalPageCount" content="0" />
+        <meta name="dtb:maxPageNumber" content="0" />
+    </head>
+    <docTitle><text>${ user }'s kindle reader</text></docTitle>
+    <docAuthor><text>${ user }</text></docAuthor>
+    <navMap>
+        <#if format == 'periodical' >
+        <navPoint class="periodical">
+            <navLabel><text>${ user }'s kindle reader</text></navLabel>
+            <content src="content.html" />
+            <#list feeds as feed >
+            <#if (feed.entryCount > 0) >
+            <navPoint class="section" id="${ feed_index }">
+                <navLabel><text>${ feed['title']?trim }</text></navLabel>
+                <content src="content.html#section_${ feed_index }" />
+                <#list feed['entries'] as item >
+                <navPoint class="article" id="${ feed_index }_${ item_index }" playOrder="${ item_index }">
+                    <navLabel><text>${ item['title']?trim }</text></navLabel>
+                    <content src="content.html#article_${ feed_index }_${ item_index }" />
+                    <mbp:meta name="description">${ item['stripped']?trim }</mbp:meta>
+                    <mbp:meta name="author"><#if item['author'] >${ item['author'] }</#if></mbp:meta>
+                </navPoint>
+                </#list>
+            </navPoint>
+            </#if>
+            </#list>
+        </navPoint>
+        <#else>
+        <navPoint class="book">
+            <navLabel><text>${ user }'s kindle reader</text></navLabel>
+            <content src="content.html" />
+            <#list feeds as feed >
+            <#if (feed.entryCount > 0) >
+            <#list feed['entries'] as item >
+            <navPoint class="chapter" id="${ feed_index }_${ item_index }" playOrder="${ item_index }">
+                <navLabel><text>${ item['title']?trim }</text></navLabel>
+                <content src="content.html#article_${ feed_index }_${ item_index }" />
+            </navPoint>
+            </#list>
+            </#if>
+            </#list>
+        </navPoint>
+        </#if>
+    </navMap>
+</ncx>

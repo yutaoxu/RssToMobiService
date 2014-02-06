@@ -1,0 +1,3 @@
+http://9.douban.com/rss/culture
+http://9.douban.com/rss/life
+http://coolshell.cn/feed/

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uid">
+    <metadata>
+        <dc-metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+            <#assign currentDatetime = .now?datetime >
+            <#if format == 'periodical' >
+            <dc:title>${ user }'s kindle reader</dc:title>
+            <#else>
+            <dc:title>${ user }'s kindle reader(${ mobitime?datetime?string.short })</dc:title>
+            </#if>
+            <dc:language>zh-CN</dc:language>
+            <dc:identifier id="uid">${ user }${ currentDatetime?string("yyyy-MM-dd hh:mm:ss a") }</dc:identifier>
+            <dc:creator>kindlereader</dc:creator>
+            <dc:publisher>kindlereader</dc:publisher>
+            <dc:subject>${ user }'s kindle reader</dc:subject>
+            <dc:date>${ currentDatetime?string("yyyy-MM-dd hh:mm:ss a") }</dc:date>
+            <dc:description></dc:description>
+        </dc-metadata>
+        <#if format == 'periodical' >
+        <x-metadata>
+            <output encoding="utf-8" content-type="application/x-mobipocket-subscription-magazine"></output>
+        </x-metadata>
+        </#if>
+    </metadata>
+    <manifest>
+    <item id="content" media-type="application/xhtml+xml" href="content.html"></item>
+    <item id="toc" media-type="application/x-dtbncx+xml" href="toc.ncx"></item>
+    </manifest>
+
+    <spine toc="toc">
+    <itemref idref="content"/>
+    </spine>
+
+    <guide>
+    <reference type="start" title="start" href="content.html#content"></reference>
+    <reference type="toc" title="toc" href="content.html#toc"></reference>
+    <reference type="text" title="cover" href="content.html#cover"></reference>
+    </guide>
+</package>
