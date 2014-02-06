@@ -6,7 +6,7 @@ RssToMobiService (rtms) is a service (you can treat it as a tool) helps you to f
 
 ------------
 
-dependency
+Dependency
 --------
 
 - python env (pip)
@@ -21,7 +21,7 @@ dependency
 > - maven: it is necessary that jar will be built with it
 > - Java's IDE: can help you edit some config item and code, it depends on yourself.
 
-### how to use
+### How to use
 > assume that you have installed those dependencies.
 
 * enter your-local-repository
@@ -64,7 +64,7 @@ java -jar RssToMobiService-1.0-SNAPSHOT.jar
 > - you should change the **feedlinks.txt**'s rss url
 > - these are apse some config items about mobi file you should pay attention to (**rtms.properites**)
 
-### what's more
+### What's more
 - you can make it as a deamon daily service.
 - optimize entry fetch/parse and image download 
 
